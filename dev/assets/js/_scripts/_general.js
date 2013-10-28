@@ -295,7 +295,7 @@
 
 	// Piano Play Click
   // --------------------------------------------------
-	$('.key > span').click(function(){
+	$('.key > span').mousedown(function(){
 		// Save note
 		var me = $(this);
 		var noteClick = me.attr('data-note');
