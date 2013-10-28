@@ -2,7 +2,7 @@
 
 Piano Keyboard developed in HTML, CSS and Javascript.
 
-[Demo](http://www.felipefialho.com/piano)
+## [Demo](http://www.felipefialho.com/piano)
 
 ## Getting Started
 
