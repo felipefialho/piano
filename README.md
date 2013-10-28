@@ -14,11 +14,9 @@ Install `grunt-cli` globally with `npm install -g grunt-cli`.
 
 Clone the project and install dependencies
 
-	```
-	git clone https://github.com/LFeh/Website.git
+	`git clone https://github.com/LFeh/Website.git
 	cd piano-keyboard 
-	npm install
-	```
+	npm install`
 
 ### Compiling CSS and JavaScript
  
