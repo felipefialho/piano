@@ -8,11 +8,11 @@ Piano Keyboard developed in HTML, CSS and Javascript.
 
 ### Install Grunt
 
-1. Install `grunt-cli` globally with `npm install -g grunt-cli`.
+Install `grunt-cli` globally with `npm install -g grunt-cli`.
 
 ### Install the project
 
-1. Clone the project and install dependencies
+Clone the project and install dependencies
 
 	``` bash
 	git clone https://github.com/LFeh/Website.git
@@ -22,14 +22,12 @@ Piano Keyboard developed in HTML, CSS and Javascript.
 
 ### Compiling CSS and JavaScript
  
-1.
 	``` 
 	grunt w
 	```
 
 ### For run the server
 
-1.
 	``` bash
 	grunt server
 	```
@@ -40,7 +38,6 @@ Piano Keyboard developed in HTML, CSS and Javascript.
 
 ### For Build
 
-1.
 	``` 
 	grunt build
 	```
