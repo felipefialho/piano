@@ -92,28 +92,29 @@
 	$('.piano').bind('selectstart dragstart', function(ev) {              
 	  ev.preventDefault();
 	  return false;
-	});  
+	});
  
 	// Piano Play Keyboard
     // --------------------------------------------------
 	$(window).bind('keydown keyup', function(ev) {
 		var keyNo = ev.which;
-		var $key = $('[data-key="'+keyNo+'"]');
-		var note = $key.attr('data-note'); 
-		if (ev.type == 'keydown') {
-			lockEvent[keyNo] = true;
-			$key.addClass('active');
-			$key.parent().addClass('active');
-		} 
-		else if (ev.type == 'keyup') {
-			lockEvent[keyNo] = false;
-			$key.removeClass('active');	 
-			$key.parent().removeClass('active');
-		} 
-	 	if (!lockEvent[keyNo]) {
-			// Play sound
-			var sound = notes[note].play();
-	 	} 
+        var $key = $('[data-key="'+keyNo+'"]');
+        var note = $key.attr('data-note'); 
+		if(note){
+			if (ev.type == 'keydown') {
+				if (!lockEvent[keyNo]) {
+					notes[note].play();
+					lockEvent[keyNo] = true;
+					$key.addClass('active');
+					$key.parent().addClass('active');
+		 		}
+			} 
+			else if (ev.type == 'keyup') {
+				lockEvent[keyNo] = false;
+				$key.removeClass('active');	 
+				$key.parent().removeClass('active');
+			} 
+		}
 	});
 
 	// Piano Play Click
@@ -123,7 +124,7 @@
 		var me = $(this);
 		var noteClick = me.attr('data-note');
 		// Play sound
-		var sound = notes[noteClick].play();
+		notes[noteClick].play();
 	});
 
 })(jQuery);
