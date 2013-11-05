@@ -117,6 +117,7 @@ grunt.initConfig({
   watch : {
     options: {
         debounceDelay: 500,
+        livereload: true
     },
     less: {
       files : [
@@ -138,7 +139,10 @@ grunt.initConfig({
     server: {
       options: {
         port: 9001,
-        base: 'dev'
+        base: 'dev',
+        hostname: "localhost",
+        livereload: true,
+        open: true
       }
     }
   }
