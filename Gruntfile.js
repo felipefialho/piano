@@ -13,6 +13,7 @@ var PathConfig = {
 var scripts = [
   '<%= config.dev %>**/_jquery-2.0.3.min.js', // JQuery
   '<%= config.dev %>**/howler.js', // Howler for HTML5 Audio
+  '<%= config.dev %>**/_jquery.mobile.custom.min.js', // For mobile events
   '<%= config.dev %>**/_general.js' // General settings
 ];
  

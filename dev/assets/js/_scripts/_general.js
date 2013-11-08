@@ -82,7 +82,7 @@
 
 	// Lock event for play
 	var lockEvent = {}; 
-
+ 
 	//
 	// Events
 	// --------------------------------------------------
@@ -125,6 +125,17 @@
 		var noteClick = me.attr('data-note');
 		// Play sound
 		notes[noteClick].play();
+	});
+ 
+	// Piano Play Tap
+    // --------------------------------------------------
+	$('.key > span').on('tap', function(){
+
+		// Save note
+		var me = $(this);
+		var noteTap = me.attr('data-note');
+		// Play sound
+		notes[noteTap].play();
 	});
 
 })(jQuery);
