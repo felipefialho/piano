@@ -4,8 +4,8 @@ module.exports = function( grunt ) {
 require('load-grunt-tasks')(grunt);
 
 // Paths
-var PathConfig = { 
-  dev: 'dev/', 
+var PathConfig = {
+  dev: 'dev/',
   dist: 'dist/'
 };
 
@@ -13,83 +13,78 @@ var PathConfig = {
 var scripts = [
   '<%= config.dev %>**/_jquery-2.0.3.min.js', // JQuery
   '<%= config.dev %>**/howler.js', // Howler for HTML5 Audio
-  '<%= config.dev %>**/_jquery.mobile.custom.min.js', // For mobile events
   '<%= config.dev %>**/_general.js' // General settings
 ];
- 
+
 // Grunt config
 grunt.initConfig({
 
   // Config path
-    config: PathConfig, 
+  config: PathConfig,
 
   // Clean files
-    clean: {
+  clean: {
     dist: {
       src: ["dist/"]
     }
-  }, 
+  },
 
   // Copy files
   copy: {
-      dist: {
-        files: [
-            {
-              expand: true, 
-              dot: true,
-              cwd: 'dev/', 
-              src: [
-                '**',
-                '*.{md,txt,htaccess}',
-                '!assets/css/less/**',
-                '!assets/js/_scripts/**',
-              ], 
-              dest: 'dist/'
-            } // makes all src relative to cwd
-        ]
-      }
-  }, 
+    dist: {
+      files: [
+        {
+          expand: true,
+          dot: true,
+          cwd: '<%= config.dev %>',
+          src: [
+            '**',
+            '*.{md,txt,htaccess}',
+            '!assets/css/less/**',
+            '!assets/js/_scripts/**',
+          ],
+          dest: '<%= config.dist %>'
+        } // makes all src relative to cwd
+      ]
+    }
+  },
 
   // Less
   less: {
     dist: {
       options: {
-        paths: ["dev/assets/css/less"],
         compress: true
       },
       files: {
-        "dist/assets/css/style.css": "dev/assets/css/less/style.less"
+        "<%= config.dist %>assets/css/style.css": "<%= config.dev %>assets/css/less/style.less"
       }
     },
     dev: {
-      options: {
-        paths: ["dev/assets/css/less"]
-      },
       files: {
-        "dev/assets/css/style.css": "dev/assets/css/less/style.less"
+        "<%= config.dev %>assets/css/style.css": "<%= config.dev %>assets/css/less/style.less"
       }
     }
-  }, 
+  },
 
   // Uglify
-    uglify: {  
+    uglify: {
     options: {
-      mangle : false 
-    },                               
-      dist: {   
+      mangle : false
+    },
+      dist: {
       files : {
-        'dist/assets/js/scripts.min.js': scripts
+        '<%= config.dist %>assets/js/scripts.min.js': scripts
       }
-    },                        
-      dev: {   
+    },
+      dev: {
       options: {
-        beautify : true 
-      },   
+        beautify : true
+      },
       files : {
-        'dev/assets/js/scripts.min.js': scripts
+        '<%= config.dev %>assets/js/scripts.min.js': scripts
       }
     }
-    }, 
+    },
 
   //JShint
   jshint: {
@@ -99,22 +94,22 @@ grunt.initConfig({
   },
 
   // HTMLmin
-  htmlmin: {                                     
-      dist: {                                       
-        options: {                                  
+  htmlmin: {
+      dist: {
+        options: {
           removeComments: true,
           collapseWhitespace: true
         },
         files: [{
-            expand: true,      
-            cwd: '<%= config.dist %>',       
-            src: ['*.html','**/*.html'],  
-            dest: '<%= config.dist %>',    
+            expand: true,
+            cwd: '<%= config.dist %>',
+            src: ['*.html','**/*.html'],
+            dest: '<%= config.dist %>',
         }],
       }
-  }, 
+  },
 
-  // Watch 
+  // Watch
   watch : {
     options: {
         debounceDelay: 500,
@@ -132,25 +127,37 @@ grunt.initConfig({
         'Gruntfile.js'
       ],
       tasks : ['uglify:dev']
-    } 
+    }
   },
 
-  // Server
-  connect: {
-    server: {
-      options: {
-        port: 9001,
-        base: 'dev',
-        hostname: "localhost",
-        livereload: true,
-        open: true
+  // Sync
+  browser_sync: {
+    files: {
+      src : [
+        '<%= config.dev %>**/*.css',
+        '<%= config.dev %>**/*.jpg',
+        '<%= config.dev %>**/*.png',
+        '<%= config.dev %>**/*.js',
+        '<%= config.dev %>*.html'
+      ]
+    },
+    options: {
+      watchTask: true,
+      host : "",
+      server: {
+        baseDir: "<%= config.dev %>"
+      },
+      ghostMode: {
+        scroll: true,
+        links: true,
+        forms: true
       }
     }
   }
 
 
 });
-  
+
 // JsLint
 grunt.registerTask( 'test', ['jshint'] );
 
@@ -158,9 +165,6 @@ grunt.registerTask( 'test', ['jshint'] );
 grunt.registerTask( 'build', [ 'clean', 'copy:dist', 'less:dist', 'uglify:dist', 'htmlmin:dist'] );
 
 // Watch
-grunt.registerTask( 'w', [ 'watch' ] );
-
-// Server
-grunt.registerTask( 'server', ['connect:server:keepalive'] );
+grunt.registerTask( 'w', ['browser_sync', 'watch' ] );
 
 };

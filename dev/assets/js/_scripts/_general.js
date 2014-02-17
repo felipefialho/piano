@@ -78,28 +78,28 @@
 		'3B': new Howl({
 			urls: ['assets/midia/3B.mp3']
 		})
-	}; 
+	};
 
 	// Lock event for play
-	var lockEvent = {}; 
- 
+	var lockEvent = {};
+
 	//
 	// Events
 	// --------------------------------------------------
 
 	// Disable Select
 	// --------------------------------------------------
-	$('.piano').bind('selectstart dragstart', function(ev) {              
+	$('.piano').bind('selectstart dragstart', function(ev) {
 	  ev.preventDefault();
 	  return false;
 	});
- 
+
 	// Piano Play Keyboard
     // --------------------------------------------------
 	$(window).bind('keydown keyup', function(ev) {
 		var keyNo = ev.which;
         var $key = $('[data-key="'+keyNo+'"]');
-        var note = $key.attr('data-note'); 
+        var note = $key.attr('data-note');
 		if(note){
 			if (ev.type == 'keydown') {
 				if (!lockEvent[keyNo]) {
@@ -108,17 +108,17 @@
 					$key.addClass('active');
 					$key.parent().addClass('active');
 		 		}
-			} 
+			}
 			else if (ev.type == 'keyup') {
 				lockEvent[keyNo] = false;
-				$key.removeClass('active');	 
+				$key.removeClass('active');
 				$key.parent().removeClass('active');
-			} 
+			}
 		}
 	});
 
 	// Piano Play Click
-    // --------------------------------------------------
+  // --------------------------------------------------
 	$('.key > span').mousedown(function(){
 		// Save note
 		var me = $(this);
@@ -126,17 +126,7 @@
 		// Play sound
 		notes[noteClick].play();
 	});
- 
-	// Piano Play Tap
-    // --------------------------------------------------
-	$('.key > span').on('tap', function(){
 
-		// Save note
-		var me = $(this);
-		var noteTap = me.attr('data-note');
-		// Play sound
-		notes[noteTap].play();
-	});
 
 })(jQuery);
 

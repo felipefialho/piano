@@ -15,20 +15,12 @@ Install `grunt-cli` globally with `npm install -g grunt-cli`.
 Clone the project and install dependencies
 
 	git clone https://github.com/LFeh/Website.git
-	cd piano-keyboard 
+	cd piano-keyboard
 	npm install
 
-### Compiling CSS and JavaScript
- 
+### Compiling CSS / JavaScript and init the Browser Sync
+
 	grunt w
-
-### For run the server
-
-	grunt server
-
-1. [Open http://localhost:9001/](http://localhost:9001/)
-
-1. Start hacking away by modifying the `dev` directory
 
 ### For Build
 
