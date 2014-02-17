@@ -10,6 +10,7 @@
   margin: 0;
   padding: 0;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -19,9 +20,9 @@ img {
 }
 @charset 'UTF-8';
 @font-face {
-  font-family: 'brandico';
-  font-style: 'normal';
-  font-weight: 'normal';
+  font-family: brandico;
+  font-style: normal;
+  font-weight: normal;
   src: url('http://weloveiconfonts.com/api/fonts/brandico/brandico.eot');
   src: url('http://weloveiconfonts.com/api/fonts/brandico/brandico.eot?#iefix') format('eot'), url('http://weloveiconfonts.com/api/fonts/brandico/brandico.woff') format('woff'), url('http://weloveiconfonts.com/api/fonts/brandico/brandico.ttf') format('truetype'), url('http://weloveiconfonts.com/api/fonts/brandico/brandico.svg#brandico') format('svg');
 }
