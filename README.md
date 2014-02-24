@@ -14,7 +14,7 @@ Install `grunt-cli` globally with `npm install -g grunt-cli`.
 
 Clone the project and install dependencies
 
-	git clone https://github.com/LFeh/Website.git
+	git clone https://github.com/LFeh/piano-keyboard.git
 	cd piano-keyboard 
 	npm install
 
