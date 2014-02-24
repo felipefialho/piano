@@ -19,110 +19,37 @@ img {
 }
 @charset 'UTF-8';
 @font-face {
-  font-family: 'brandico';
-  font-style: 'normal';
-  font-weight: 'normal';
-  src: url('http://weloveiconfonts.com/api/fonts/brandico/brandico.eot');
-  src: url('http://weloveiconfonts.com/api/fonts/brandico/brandico.eot?#iefix') format('eot'), url('http://weloveiconfonts.com/api/fonts/brandico/brandico.woff') format('woff'), url('http://weloveiconfonts.com/api/fonts/brandico/brandico.ttf') format('truetype'), url('http://weloveiconfonts.com/api/fonts/brandico/brandico.svg#brandico') format('svg');
+  font-family: 'piano-keyboard';
+  src: url('fonts/piano-keyboard.eot?nfc6q9');
+  src: url('fonts/piano-keyboard.eot?#iefixnfc6q9') format('embedded-opentype'), url('fonts/piano-keyboard.woff?nfc6q9') format('woff'), url('fonts/piano-keyboard.ttf?nfc6q9') format('truetype'), url('fonts/piano-keyboard.svg?nfc6q9#piano-keyboard') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-.brandico-facebook:before {
-  content: "\f300";
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'piano-keyboard';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.brandico-facebook-rect:before {
-  content: "\f301";
+.icon-facebook:before {
+  content: "\e600";
 }
-.brandico-twitter:before {
-  content: "\f302";
+.icon-linkedin:before {
+  content: "\e601";
 }
-.brandico-twitter-bird:before {
-  content: "\f303";
+.icon-twitter:before {
+  content: "\e602";
 }
-.brandico-vimeo:before {
-  content: "\f30f";
-}
-.brandico-vimeo-rect:before {
-  content: "\f30e";
-}
-.brandico-tumblr:before {
-  content: "\f311";
-}
-.brandico-tumblr-rect:before {
-  content: "\f310";
-}
-.brandico-googleplus-rect:before {
-  content: "\f309";
-}
-.brandico-github-text:before {
-  content: "\f307";
-}
-.brandico-github:before {
-  content: "\f308";
-}
-.brandico-skype:before {
-  content: "\f30b";
-}
-.brandico-icq:before {
-  content: "\f304";
-}
-.brandico-yandex:before {
-  content: "\f305";
-}
-.brandico-yandex-rect:before {
-  content: "\f306";
-}
-.brandico-vkontakte-rect:before {
-  content: "\f30a";
-}
-.brandico-odnoklassniki:before {
-  content: "\f30c";
-}
-.brandico-odnoklassniki-rect:before {
-  content: "\f30d";
-}
-.brandico-friendfeed:before {
-  content: "\f312";
-}
-.brandico-friendfeed-rect:before {
-  content: "\f313";
-}
-.brandico-blogger:before {
-  content: "\f314";
-}
-.brandico-blogger-rect:before {
-  content: "\f315";
-}
-.brandico-deviantart:before {
-  content: "\f316";
-}
-.brandico-jabber:before {
-  content: "\f317";
-}
-.brandico-lastfm:before {
-  content: "\f318";
-}
-.brandico-lastfm-rect:before {
-  content: "\f319";
-}
-.brandico-linkedin:before {
-  content: "\f31a";
-}
-.brandico-linkedin-rect:before {
-  content: "\f31b";
-}
-.brandico-picasa:before {
-  content: "\f31c";
-}
-.brandico-wordpress:before {
-  content: "\f31d";
-}
-.brandico-instagram:before {
-  content: "\f31e";
-}
-.brandico-instagram-filled:before {
-  content: "\f31f";
-}
-[class*="brandico-"]:before {
-  font-family: 'brandico', sans-serif;
+.icon-github:before {
+  content: "\e603";
 }
 body {
   color: #222;
