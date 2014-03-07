@@ -25,3 +25,7 @@ Clone the project and install dependencies
 ### For Build
 
 	grunt build
+
+## License
+ 
+[MIT License](https://github.com/LFeh/MITLicense) © Luiz Felipe Tartarotti Fialho
