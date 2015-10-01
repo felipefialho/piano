@@ -1,17 +1,20 @@
 module.exports = function( grunt ) {
 
 // Load all tasks
+// ---------------------------------
 require('load-grunt-tasks')(grunt);
 
 // Paths
+// ---------------------------------
 var PathConfig = {
   dev: 'dev/',
   dist: 'dist/'
 };
 
 // Set scripts
+// ---------------------------------
 var scripts = [
-  '<%= config.dev %>**/_jquery-2.0.3.min.js', // JQuery
+  '<%= config.dev %>**/_zepto.min.js', // JQuery
   '<%= config.dev %>**/howler.js', // Howler for HTML5 Audio
   '<%= config.dev %>**/_general.js' // General settings
 ];
@@ -20,9 +23,11 @@ var scripts = [
 grunt.initConfig({
 
   // Config path
+  // ---------------------------------
   config: PathConfig,
 
   // Clean files
+  // ---------------------------------
   clean: {
     dist: {
       src: ["dist/"]
@@ -30,6 +35,7 @@ grunt.initConfig({
   },
 
   // Copy files
+  // ---------------------------------
   copy: {
     dist: {
       files: [
@@ -50,6 +56,7 @@ grunt.initConfig({
   },
 
   // Less
+  // ---------------------------------
   less: {
     dist: {
       options: {
@@ -67,6 +74,7 @@ grunt.initConfig({
   },
 
   // Uglify
+  // ---------------------------------
     uglify: {
     options: {
       mangle : false
@@ -87,6 +95,7 @@ grunt.initConfig({
     },
 
   //JShint
+  // ---------------------------------
   jshint: {
     files: [
       '<%= config.dev %>assets/js/**/_general.js'
@@ -94,6 +103,7 @@ grunt.initConfig({
   },
 
   // HTMLmin
+  // ---------------------------------
   htmlmin: {
       dist: {
         options: {
@@ -110,7 +120,8 @@ grunt.initConfig({
   },
 
   // Watch
-  watch : {
+  // ---------------------------------
+  watch : { 
     options: {
         debounceDelay: 500,
         livereload: true
@@ -127,27 +138,36 @@ grunt.initConfig({
         'Gruntfile.js'
       ],
       tasks : ['uglify:dev']
+    },
+    build: {
+      files: [
+        'Gruntfile.js' 
+      ],
+      tasks: ['build'] 
     }
   },
-
-  // Sync
-  browser_sync: {
-    files: {
+ 
+  // Task: BrowserSync
+  // ---------------------------------
+  browserSync: {
+    bsFiles: {
       src : [
-        '<%= config.dev %>**/*.css',
-        '<%= config.dev %>**/*.jpg',
-        '<%= config.dev %>**/*.png',
-        '<%= config.dev %>**/*.js',
-        '<%= config.dev %>*.html'
+        '<%= config.dev %>/**/*.css',
+        '<%= config.dev %>/**/*.js',
+        '<%= config.dev %>/**/*.jpg', 
+        '<%= config.dev %>/**/*.png', 
+        '<%= config.dev %>/**/*.svg',
+        '<%= config.dev %>/*.html'
       ]
     },
     options: {
       watchTask: true,
-      host : "",
+      host : '',
       server: {
-        baseDir: "<%= config.dev %>"
+        baseDir: '<%= config.dev %>'
       },
       ghostMode: {
+        clicks: true,
         scroll: true,
         links: true,
         forms: true
@@ -162,9 +182,9 @@ grunt.initConfig({
 grunt.registerTask( 'test', ['jshint'] );
 
 // Build
-grunt.registerTask( 'build', [ 'clean', 'copy:dist', 'less:dist', 'uglify:dist', 'htmlmin:dist'] );
+grunt.registerTask( 'build', [ 'clean', 'copy', 'less', 'uglify', 'htmlmin'] );
 
 // Watch
-grunt.registerTask( 'w', ['browser_sync', 'watch' ] );
+grunt.registerTask( 'w', ['browserSync', 'watch' ] );
 
 };

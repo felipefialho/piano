@@ -1,4 +1,4 @@
-(function($) {
+(function() {
 
 	//
 	// Variables
@@ -128,5 +128,5 @@
 	});
 
 
-})(jQuery);
+})();
 
