@@ -1,6 +1,6 @@
 # Piano Keyboard
 
-Piano Keyboard developed in HTML, CSS and Javascript.
+Piano Keyboard developed with HTML, CSS and Javascript.
 
 ## [Demo](http://www.felipefialho.com/piano)
 
