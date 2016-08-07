@@ -224,3 +224,9 @@ hr {
     display: none;
   }
 }
+
+/*Deixando as teclas maiores com uma tonalidade mais velha*/
+.white-key {
+  background:#e3dda9!important;
+  background: linear-gradient(#ebecda,white,#e3dda9)!important;
+}
