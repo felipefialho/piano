@@ -7,5 +7,23 @@
     "name": "Felipe Fialho",
     "email": "hi@felipefialho.com",
     "url": "http://www.felipefialho.com"
+  },
+  "scripts": {
+    "start": "npm run watch:assets & npm run browsersync",
+    "fix": "./node_modules/.bin/eslint ./app/ --fix",
+    "lint": "npm run lint:js",
+    "lint:js": "./node_modules/.bin/eslint ./app/", 
+    "assets": "npm run build:html",
+    "assets:html": "pug ./app/ --out ./dist/ && browser-sync reload",
+    "watch:assets": "npm run watch:html",
+    "watch:html": "onchange './app/*.pug' -- npm run assets:html",
+    "browsersync": "browser-sync start --server 'dist' --files 'dist'"
+  },
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "eslint": "^4.19.1",
+    "husky": "^0.14.3",
+    "onchange": "^3.3.0",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
