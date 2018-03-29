@@ -1,0 +1,61 @@
+// ==================================================
+// Variables
+//
+// 1. Colors
+// 2. Spaces
+// 3. Media Queries 
+// ==================================================
+ 
+// --------------------------------------------------
+// 1. Colors
+// --------------------------------------------------
+
+//
+// Colors
+// --------------------------------------------------
+
+$gray-darker  = #282828
+$gray-dark    = #333
+$gray         = #666
+$gray-medium  = #aaa
+$gray-light   = #c8c8c8
+$gray-lighter = #dedede
+$gray-white   = #fafafa
+$white        = #fff
+
+// -------------------------------------------------
+// 2. Spaces
+// --------------------------------------------------
+
+$space-xxs     = .4rem                // Smallest space margin
+$space-xs      = .8rem                // Extra small space margin
+$space-sm      = 1.6rem               // Small space margin
+$space         = 2.4rem               // Regular space margin
+$space-md      = 3.2rem               // Medium space margin
+$space-lg      = 4.8rem               // Large space margin
+$space-xlg     = 6.4rem               // Extra Large space margin
+$space-xxlg    = 9.6rem               // Extra Large space margin  
+
+// --------------------------------------------------
+// 3. Media Queries
+// --------------------------------------------------
+
+$screen-xxs  = 380px  // xExtra small screen / phone
+$screen-xs   = 440px  // Extra small screen / phone
+$screen-sm   = 768px  // Small screen / tablet
+$screen-md   = 992px  // Medium screen / desktop
+$screen-lg   = 1200px // Large screen / wide desktop
+$screen-xlg  = 1400px // Extra Large screen / wide desktop
+$screen-xxlg = 1600px // Extra Large screen / wide desktop
+
+// Rupture Settings
+// @stylint off
+rupture.mobile-cutoff  = $screen-sm
+rupture.tablet-cutoff  = $screen-md
+rupture.desktop-cutoff = $screen-lg
+rupture.hd-cutoff      = $screen-xlg
+
+rupture.scale          = 0 $screen-xxs $screen-sm $screen-md $screen-lg $screen-xlg $screen-xxlg
+rupture.scale-names    = 'xxs' 'xs' 'sm' 'md' 'lg' 'xlg' 'hd'
+rupture.anti-overlap   = -1px
+// @stylint on
