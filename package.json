@@ -10,16 +10,16 @@
   },
   "scripts": {
     "start": "npm run assets && npm run watch:assets & npm run browsersync",
-    "fix": "./node_modules/.bin/eslint ./app/ --fix",
+    "fix": "./node_modules/.bin/eslint ./src/ --fix",
     "lint": "npm run lint:js",
-    "lint:js": "./node_modules/.bin/eslint ./app/",
+    "lint:js": "./node_modules/.bin/eslint ./src/",
     "assets": "npm run assets:html && npm run assets:css && npm run assets:medias",
-    "assets:css": "stylus -u ./node_modules/rupture < ./app/styl/style.styl > ./dist/assets/css/style.css && group-css-media-queries ./dist/assets/css/style.css ./dist/assets/css/style.css && postcss ./dist/assets/css/style.css -r ./dist/assets/css/style.css && browser-sync reload",
-    "assets:html": "pug ./app/ --out ./dist/ && browser-sync reload",
-    "assets:medias": "cp -R ./app/medias ./dist/assets/medias/ && rm -R ./dist/assets/medias/notes-not-used",
+    "assets:css": "stylus -u ./node_modules/rupture < ./src/styl/style.styl > ./dist/assets/css/style.css && group-css-media-queries ./dist/assets/css/style.css ./dist/assets/css/style.css && postcss ./dist/assets/css/style.css -r ./dist/assets/css/style.css && browser-sync reload",
+    "assets:html": "pug ./src/ --out ./dist/ && browser-sync reload",
+    "assets:medias": "cp -R ./src/medias ./dist/assets/medias/ && rm -R ./dist/assets/medias/notes-not-used",
     "watch:assets": "npm run watch:html & npm run watch:css",
-    "watch:css": "onchange './app/**/*.styl' -- npm run assets:css",
-    "watch:html": "onchange './app/*.pug' -- npm run assets:html",
+    "watch:css": "onchange './src/**/*.styl' -- npm run assets:css",
+    "watch:html": "onchange './src/*.pug' -- npm run assets:html",
     "browsersync": "browser-sync start --server 'dist'",
     "postinstall": "mkdir -p ./dist/assets/css"
   },
@@ -28,12 +28,14 @@
     "cssnano": "^3.10.0",
     "eslint": "^4.19.1",
     "group-css-media-queries": "^1.4.1",
+    "howler": "^2.0.9",
     "husky": "^0.14.3",
     "onchange": "^3.3.0",
     "postcss-cli": "^5.0.0",
     "pug-cli": "^1.0.0-alpha6",
     "rucksack-css": "^1.0.2",
     "rupture": "^0.7.1",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "webpack": "^4.4.1"
   }
 }
