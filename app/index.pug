@@ -28,42 +28,52 @@ html
       ga('send', 'pageview'); 
 
   body 
-    section.piano
-      .piano-key
-        .piano-key__white(data-key='20' data-note='1C')
-        .piano-key__black(data-key='81' data-note='1Cs')
-      .piano-key
-        .piano-key__white(data-key='65' data-note='1D')
-        .piano-key__black(data-key='87' data-note='1Ds')
-      .piano-key
-        .piano-key__white(data-key='83' data-note='1E')
-      .piano-key
-        .piano-key__white(data-key='68' data-note='1F')
-        .piano-key__black(data-key='82' data-note='1Fs')
-      .piano-key
-        .piano-key__white(data-key='70' data-note='1G')
-        .piano-key__black(data-key='84' data-note='1Gs')
-      .piano-key
-        .piano-key__white(data-key='71' data-note='2A')
-        .piano-key__black(data-key='89' data-note='2As')
-      .piano-key
-        .piano-key__white(data-key='72' data-note='2B')
-      .piano-key
-        .piano-key__white(data-key='74' data-note='2C')
-        .piano-key__black(data-key='73' data-note='2Cs')
-      .piano-key
-        .piano-key__white(data-key='75' data-note='2D')
-        .piano-key__black(data-key='79' data-note='2Ds')
-      .piano-key
-        .piano-key__white(data-key='76' data-note='2E')
-      .piano-key
-        .piano-key__white(data-key='186' data-note='2F')
-        .piano-key__black(data-key='219' data-note='2Fs')
-      .piano-key
-        .piano-key__white(data-key='222' data-note='2G')
-        .piano-key__black(data-key='221' data-note='2Gs')
-      .piano-key
-        .piano-key__white(data-key='220' data-note='3A')
-        .piano-key__black(data-key='13' data-note='3As')
-      .piano-key
-        .piano-key__white(data-key='37' data-note='3B') 
+    section.header
+      .piano
+        .piano-key
+          .piano-key__white(data-key='20' data-note='1C')
+          .piano-key__black(data-key='81' data-note='1Cs')
+        .piano-key
+          .piano-key__white(data-key='65' data-note='1D')
+          .piano-key__black(data-key='87' data-note='1Ds')
+        .piano-key
+          .piano-key__white(data-key='83' data-note='1E')
+        .piano-key
+          .piano-key__white(data-key='68' data-note='1F')
+          .piano-key__black(data-key='82' data-note='1Fs')
+        .piano-key
+          .piano-key__white(data-key='70' data-note='1G')
+          .piano-key__black(data-key='84' data-note='1Gs')
+        .piano-key
+          .piano-key__white(data-key='71' data-note='2A')
+          .piano-key__black(data-key='89' data-note='2As')
+        .piano-key
+          .piano-key__white(data-key='72' data-note='2B')
+        .piano-key
+          .piano-key__white(data-key='74' data-note='2C')
+          .piano-key__black(data-key='73' data-note='2Cs')
+        .piano-key
+          .piano-key__white(data-key='75' data-note='2D')
+          .piano-key__black(data-key='79' data-note='2Ds')
+        .piano-key
+          .piano-key__white(data-key='76' data-note='2E')
+        .piano-key
+          .piano-key__white(data-key='186' data-note='2F')
+          .piano-key__black(data-key='219' data-note='2Fs')
+        .piano-key
+          .piano-key__white(data-key='222' data-note='2G')
+          .piano-key__black(data-key='221' data-note='2Gs')
+        .piano-key
+          .piano-key__white(data-key='220' data-note='3A')
+          .piano-key__black(data-key='13' data-note='3As')
+        .piano-key
+          .piano-key__white(data-key='37' data-note='3B') 
+    main.main 
+      .container
+        .content
+          h1.title Piano Keyboard
+          h2.subtitle Pure CSS and JavaScript 😎
+          a.social(href='https://github.com/LFeh/piano') 
+            img(src='https://img.shields.io/github/stars/LFeh/piano.svg?style=flat-square&label=Stars' alt='Stars') 
+          p.description You can use your keyboard or mouse to play the piano.  
+          p.description The first key of keyboard is "caps lock" and the sequence of keys is the same of the piano.

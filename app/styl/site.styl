@@ -1,12 +1,92 @@
-* 
+// ==================================================
+// Site
+//
+// 1. Scaffolding
+// 2. Structure
+// 3. Types
+// 4. Social
+// ==================================================
+ 
+// --------------------------------------------------
+// 1. Scaffolding
+// --------------------------------------------------
+
+*
+  box-sizing border-box 
   margin 0
   padding 0
+
+  &:before,
+  &:after
+    box-sizing border-box
 
 html
   font-size responsive 8px 10px
 
 body 
+  -moz-osx-font-smoothing auto
+  -webkit-font-smoothing antialiased
+  -webkit-overflow-scrolling touch
   color $gray-darker
-  font-size 1.4rem
+  font-family -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif 
   margin 0
   overflow-x hidden
+
+// --------------------------------------------------
+// 2. Structure
+// --------------------------------------------------
+
+.header 
+  left 0
+  position fixed 
+  right 0
+  top 0
+  z-index $zindex-piano
+
+.main 
+  background $white 
+  margin-top $piano-height
+  padding-bottom $space-md
+  padding-top $space-md
+  position relative
+  z-index $zindex-site
+
+.container
+  margin-left auto
+  margin-right auto
+  max-width $screen-md
+  padding-left $space
+  padding-right $space
+
+// --------------------------------------------------
+// 3. Types
+// --------------------------------------------------
+
+.title 
+  font-size 6rem
+
+  &:not(:last-child)
+    margin-bottom ($space-xxs / 2)
+
+.subtitle 
+  color $gray
+  font-size 3rem
+
+  &:not(:last-child)
+    margin-bottom $space-xxs
+
+.description 
+  font-size 2rem
+
+  &:not(:last-child)
+    margin-bottom $space-xs
+
+// --------------------------------------------------
+// 4. Social
+// --------------------------------------------------
+
+.social 
+  display inline-block 
+ 
+  &:not(:last-child)
+    margin-bottom $space-sm
