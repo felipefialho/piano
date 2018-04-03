@@ -4,7 +4,7 @@
 // 1. Scaffolding
 // 2. Structure
 // 3. Types
-// 4. Social
+// 4. Footer
 // ==================================================
  
 // --------------------------------------------------
@@ -46,6 +46,7 @@ body
 .main 
   background $white 
   margin-top $piano-height
+  min-height 'calc(%s)' % (100vh - ($piano-height + $footer-height))
   padding-bottom $space-md
   padding-top $space-md
   position relative
@@ -80,13 +81,31 @@ body
 
   &:not(:last-child)
     margin-bottom $space-xs
-
-// --------------------------------------------------
-// 4. Social
-// --------------------------------------------------
-
+ 
 .social 
   display inline-block 
  
   &:not(:last-child)
     margin-bottom $space-sm
+
+// --------------------------------------------------
+// 4. Footer
+// --------------------------------------------------
+
+.footer
+  align-items center
+  background $gray-darker
+  color $white 
+  display flex
+  height $footer-height
+  font-size 1.6rem
+  justify-content center
+
+  &__link 
+    color $blue-light
+    font-weight bold
+    text-decoration none
+
+    &:focus
+    &:hover
+      text-decoration underline
