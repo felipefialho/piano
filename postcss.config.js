@@ -1,6 +1,9 @@
-module.exports =  {
-  plugins: [
-    require('rucksack-css')(),  
-    require('cssnano')()
-  ]
+module.exports = { 
+  plugins: {
+    'autoprefixer': {},
+    'rucksack-css': {},
+    'lost': {},
+    'postcss-font-magician': {},
+    'cssnano': {}
+  }
 };
