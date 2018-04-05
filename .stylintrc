@@ -1,0 +1,66 @@
+{
+  "blocks": false,
+  "brackets": { 
+    "expect": "never",
+    "error": true
+  },
+  "colons": { 
+    "expect": "never",
+    "error": true
+  },
+  "colors": "always",
+  "commaSpace": "aways",
+  "commentSpace": "always",
+  "cssLiteral": "never",
+  "customProperties": [],
+  "depthLimit": { 
+    "expect": 3,
+    "error": true
+  },
+  "duplicates": true,
+  "efficient": "always",
+  "exclude": [ 
+    "./_src/app/styl/_core/variables.styl",
+    "./_src/cms/styl/_core/variables.styl"
+  ],
+  "extendPref": false,
+  "globalDupe": false,
+  "groupOutputByFile": true,
+  "indentPref": {
+    "expect": 2,
+    "error": true
+  },
+  "leadingZero": "never",
+  "maxErrors": false,
+  "maxWarnings": false,
+  "mixed": false,
+  "mixins": [],
+  "namingConvention": false,
+  "namingConventionStrict": false,
+  "none": "never",
+  "noImportant": false,
+  "parenSpace": false,
+  "placeholders": "always",
+  "prefixVarsWithDollar": "always",
+  "quotePref": false,
+  "reporterOptions": {
+    "columns": ["lineData", "severity", "description", "rule"],
+    "columnSplitter": "  ",
+    "showHeaders": false,
+    "truncate": true
+  },
+  "semicolons": { 
+    "expect": "never",
+    "error": true
+  },
+  "sortOrder": { 
+    "expect": "alphabetical",
+    "error": true
+  },
+  "stackedProperties": "never",
+  "trailingWhitespace": false,
+  "universal": false,
+  "valid": false,
+  "zeroUnits": "never",
+  "zIndexNormalize": false
+}
