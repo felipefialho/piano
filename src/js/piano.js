@@ -74,26 +74,21 @@ export const piano = () => {
     '3B': new Howl({
       src: ['medias/987-B.mp3']
     })
-  };
-  const lockEvent = {};
-  const $key = document.querySelectorAll('[data-key]');
+  }; 
 
-  window.addEventListener('keydown keyup', function(e) {
+  window.addEventListener('keydown', function(e) { 
     const keyNo = e.which;
-    const $keyPress = document.querySelector('[data-key="' + keyNo + '"]');
-    const note = $keyPress.getAttribute('data-note'); 
-    if (e.type == 'keydown') {
-      if (!lockEvent[keyNo]) {
-        notes[note].play();
-        lockEvent[keyNo] = true;
-        $key.classList.add('active');
-        $key.parentElement.classList.add('active');
-      }
-    } else if (e.type == 'keyup') {
-      lockEvent[keyNo] = false;
+    const $key = document.querySelector('[data-key="' + keyNo + '"]');
+    const note = $key.getAttribute('data-note');
+
+    notes[note].play(); 
+    $key.classList.add('active');
+    $key.parentElement.classList.add('active'); 
+
+    setTimeout(() => {
       $key.classList.remove('active');
       $key.parentElement.classList.remove('active');
-    } 
+    }, 600);
   });
 
   document.querySelectorAll('[data-key]').forEach((key) => {  
