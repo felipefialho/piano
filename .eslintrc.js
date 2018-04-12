@@ -4,7 +4,11 @@ module.exports = {
     es6: true,
     jquery: true
   },
-  globals: {},
+  globals: {
+    "fetch": false,
+    "window": true,
+    "document": true
+  },
   extends: 'eslint:recommended',
   parserOptions: {
     sourceType: 'module'
