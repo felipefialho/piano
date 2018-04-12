@@ -32,6 +32,7 @@
     "noprompt": true
   },
   "dependencies": {
+    "howler": "^2.0.9",
     "lodash": "^4.17.4",
     "webpack": "^3.5.5"
   },
