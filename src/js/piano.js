@@ -96,8 +96,10 @@ export const piano = () => {
     } 
   });
 
-  $key.addEventListener('click', (e) => { 
-    const note = e.getAttribute('data-note');  
-    notes[note].play(); 
+  document.querySelectorAll('[data-key]').forEach((key) => {  
+    key.addEventListener('click', (e) => { 
+      const note = key.getAttribute('data-note');   
+      notes[note].play(); 
+    });
   });
 };
