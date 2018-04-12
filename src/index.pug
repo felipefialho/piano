@@ -1,29 +1,40 @@
+- var data = require('../app.config.json');
+
 doctype html
-html
+html(lang='pt-br')
   head
-    title Piano Keyboard - Felipe Fialho
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='description' content='Piano Keyboard developed with HTML, CSS and JavaScript')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no') 
-    link(type='text/css' rel='stylesheet' href='style.css') 
+    title #{data.title} - #{data.description}
+    meta(charset='utf-8')
+    meta(name='description' content=data.description)
+    meta(name='image' content=data.logo_fallback) 
+    meta(itemprop='name' content=data.title)
+    meta(itemprop='description' content=data.description)
+    meta(itemprop='image' content=data.logo_fallback) 
+    meta(name='twitter:card' content='summary')
+    meta(name='twitter:title' content=data.title)
+    meta(name='twitter:description' content=data.description)
+    meta(name='twitter:site' content='@lfeh')
+    meta(name='twitter:creator' content='@lfeh')
+    meta(name='twitter:image:src' content=data.logo_fallback) 
+    meta(name='og:title' content=data.title)
+    meta(name='og:description' content=data.description)
+    meta(name='og:image' content=data.logo_fallback)
+    meta(name='og:url' content='https://www.felipefialho.com/1500-translator')
+    meta(name='og:site_name' content=data.title)
+    meta(name='og:locale' content='pt_br')
+    meta(name='og:type' content='website')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge') 
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5') 
+    meta(name='theme-color' content=data.theme_color)
+    link(rel='shortcut icon' type='image/favicon' href='favicon.ico')   
+    script(async src='https://www.googletagmanager.com/gtag/js?id=' + data.ga)
     script.
-      (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date()); 
+      gtag('config', '#{data.ga}'); 
 
-      ga('create', 'UA-45159592-1', 'felipefialho.com');
-      ga('send', 'pageview'); 
-
-  body 
+  body   
     section.header
       .piano
         .piano-key
@@ -79,4 +90,3 @@ html
           | Made with ❤ by 
           a.footer__link(href='https://twitter.com/LFeh' target='_blank' rel='noopener noreferrer') Felipe Fialho
 
-    script(src='app.js')
