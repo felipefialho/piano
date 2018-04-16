@@ -2,8 +2,14 @@
 // Social
 // --------------------------------------------------
   
-.social 
-  display inline-block 
+.social  
+  display flex
  
   &:not(:last-child)
     margin-bottom $space-sm
+
+  &__link 
+    display block
+
+    &:not(:last-child)
+      margin-right ($space-xxs / 2)
