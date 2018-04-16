@@ -1,0 +1,9 @@
+{
+	"title": "Piano Keyboard",
+	"description": "To play piano using CSS and JavaScript",
+	"logo": "images/piano.png",
+	"logo_fallback": "images/piano.png",
+	"theme_color": "#333333",
+	"short_name": "Piano",
+	"ga": "UA-45159592-1"
+}

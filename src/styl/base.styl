@@ -1,0 +1,35 @@
+// --------------------------------------------------
+// Base
+// --------------------------------------------------
+
+*
+  box-sizing border-box 
+  margin 0
+  padding 0
+
+  &:before,
+  &:after
+    box-sizing border-box
+
+html
+  font-size responsive 8px 10px
+
+body 
+  -moz-osx-font-smoothing auto
+  -webkit-font-smoothing antialiased
+  -webkit-overflow-scrolling touch
+  color $gray-dark
+  font-family -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,Cantarell, 'Helvetica Neue', sans-serif  
+  overflow-x hidden
+  visibility visible
+ 
+img 
+  max-width 100%
+ 
+a 
+  color $blue
+  text-decoration none 
+
+  &:focus,
+  &:hover
+    text-decoration underline

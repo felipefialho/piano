@@ -1,0 +1,68 @@
+// ==================================================
+// Piano 
+// ==================================================
+
+// @stylint off 
+.piano    
+  background linear-gradient(-65deg, #000, #222, #000, #666, #222 75%) 
+  border-top $space-xs $gray-darker solid
+  box-shadow inset 0 -1px 1px rgba($white, .5), inset 0 -($space-xxs) $space-xxs $gray-darker
+  display flex
+  height $piano-height 
+  justify-content center
+  overflow hidden
+  padding-bottom 5%
+  padding-left 2.5%
+  padding-right 2.5% 
+
+  &-key 
+    flex 1 
+    margin 0 ($space-xxs / 4)
+    max-width $space-xxlg
+    position relative
+ 
+    +below('sm') 
+      &:nth-child(1)
+      &:nth-child(2)
+      &:nth-child(3)  
+        display none 
+
+    +below('xs')  
+      &:nth-child(11)
+      &:nth-child(12)
+      &:nth-child(13)
+      &:nth-child(14)
+        display none 
+     
+    &__white  
+      background linear-gradient(-30deg, #f8f8f8, #fff)
+      box-shadow inset 0 1px 0px rgba(255,255,255, 1),inset 0 -1px 0px rgba(255,255,255, 1),inset 1px 0px 0px rgba(255,255,255, 1),inset -1px 0px 0px rgba(255,255,255, 1),0 4px 3px rgba(0,0,0,.7),inset 0 -1px 0px rgba(255,255,255, 1),inset 1px 0px 0px rgba(255,255,255, 1),inset -1px -1px 15px rgba(0,0,0, .5), -3px 4px 6px rgba(0,0,0, .5) 
+      height 100% 
+      position relative
+      
+      &:active
+      &.active 
+        box-shadow inset 0 1px 0px rgba(255,255,255, 1),inset 0 -1px 0px rgba(255,255,255, 1),inset 1px 0px 0px rgba(255,255,255, 1),inset -1px 0px 0px rgba(255,255,255, 1),0 4px 3px rgba(0,0,0,.7),inset 0 -1px 0px rgba(255,255,255, 1),inset 1px 0px 0px rgba(255,255,255, 1),inset -1px -1px 15px rgba(0,0,0, 1), -3px 4px 6px rgba(0,0,0, .5)
+        height 'calc(%s)' % (100% - $space-xxs)
+        position relative
+        top -($space-xxs)
+    
+    
+    &__black   
+      background linear-gradient(-20deg,#222,#000,#222)
+      box-shadow inset 0px -1px 2px rgba(255,255,255,.4),0 2px 3px rgba(0,0,0,.4) 
+      border-width ($space-xxs / 2) $space-xxs ($space-xs + $space-xxs)
+      border-style solid
+      border-color #666 #222 #111 #555
+      height 50%
+      left 100%
+      position absolute
+      transform translateX(-50%)
+      top 0 
+      width 70%
+      z-index $zindex-piano
+      
+      &:active
+      &.active
+        border-bottom-width $space-xxs   
+// @stylint on
