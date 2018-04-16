@@ -10,16 +10,11 @@ This project uses Pug, Stylus and Webpack.
 ## Getting Started
 
 ```sh
-# Clone this repository
-$ git clone git@github.com:LFeh/piano.git
-$ cd piano
-
 # install dependencies
 $ npm i
 
 # Run the project
 $ npm start
-
 ```
 
 With the commands above, you have everything to start.
@@ -37,8 +32,8 @@ To help you, this project has a `npm run fix` command to fix all eslint errors.
 ### Tasks
 
 - `npm start`: run all tasks and initialize watch for changes and a server
-- `npm build`: run all production tasks create a `dist` folder to deploy
-- `npm lint`: lint javascript and css
+- `npm run build`: run all production tasks create a `dist` folder to deploy
+- `npm run lint`: lint javascript and css
 - `npm run fix`: command to fix all eslint errors
 - `npm run build`: run all tasks to build
 
