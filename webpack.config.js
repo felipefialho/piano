@@ -18,9 +18,10 @@ const webapp = {
   description: config.description,
   background_color: config.theme_color,
   theme_color: config.theme_color,
+  orientation: 'landscape',
   icons: [
     {
-      src: path.resolve('./src/medias/piano.png'),
+      src: path.resolve('./src/images/piano.png'),
       sizes: [96, 128, 192, 256, 384, 512]
     }
   ]
@@ -120,7 +121,9 @@ if (DEV) {
   baseWebpack.devServer = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    open: true
+    open: true,
+    host: '0.0.0.0', 
+    disableHostCheck: true
   }; 
 }  
 
