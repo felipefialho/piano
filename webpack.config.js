@@ -100,8 +100,8 @@ const baseWebpack = {
 const sw = { 
   safeToUseOptionalCaches: true,
   caches: {
-    main: ['/'],
-    additional: ['*.js?*', '*.css?*', 'assets/*.svg?*']
+    main: ['index.html'],
+    additional: ['*.js?*', 'medias/*.mp3']
   },
   navigateFallbackURL: '/',
   autoUpdate: true,
