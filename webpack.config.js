@@ -104,7 +104,7 @@ const sw = {
   },
   navigateFallbackURL: '/',
   autoUpdate: true,
-  responseStrategy: 'network-first',
+  responseStrategy: 'cache-first',
   ServiceWorker: { events: true },
   AppCache: { events: true }
 };
