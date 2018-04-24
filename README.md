@@ -37,7 +37,7 @@ To help you, this project has a `npm run fix` command to fix all eslint errors.
 - `npm run build`: run all production tasks create a `dist` folder to deploy
 - `npm run lint`: lint javascript and css
 - `npm run fix`: command to fix all eslint errors
-- `npm run build`: run all tasks to build
+- `npm run deploy`: run all tasks to build and deploy on gh-pages
 
 ## License
 
