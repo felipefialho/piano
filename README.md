@@ -2,6 +2,8 @@
 
 # Piano Keyboard
 
+> To play piano using CSS and JavaScript
+
 [![license](https://img.shields.io/github/license/LFeh/piano.svg)](./license.md)
 [![GitHub contributors](https://img.shields.io/github/contributors/LFeh/piano.svg)](https://github.com/LFeh/piano/graphs/contributors)
 
