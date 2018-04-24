@@ -1,0 +1,42 @@
+{
+  "icons": [
+    {
+      "src": "icon_512x512.32957b2ca33ef462c713f5ff66211326.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.004009db34f215f634968654ff75f9bb.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.7baaa89719b353934443689e7c9387bf.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.278132ce0489f0d81f4731073c883eca.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.cd6e037e2291dcc0043318a1344f2cb1.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.48e00bd1e14e35309f03b1c72945131f.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Piano Keyboard",
+  "short_name": "Piano",
+  "orientation": "landscape",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "To play piano using CSS and JavaScript",
+  "background_color": "#333333",
+  "theme_color": "#333333"
+}
