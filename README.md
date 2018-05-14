@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cloud.githubusercontent.com/assets/3603793/23483757/ffbc98c0-feb2-11e6-8d3e-c9d122bf7e3b.png"></p>
+<img align="center" width="400" height="103,509" src="https://user-images.githubusercontent.com/34600369/40012510-d42b8988-57a2-11e8-8c71-e44f6379f248.png">
 
 # Piano Keyboard
 
