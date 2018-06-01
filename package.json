@@ -32,7 +32,8 @@
     "noprompt": true
   },
   "dependencies": {
-    "howler": "^2.0.9", 
+    "debounce": "^1.1.0",
+    "howler": "^2.0.9",
     "webpack": "^3.5.5"
   },
   "devDependencies": {
