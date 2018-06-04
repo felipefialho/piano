@@ -32,7 +32,7 @@
     "noprompt": true
   },
   "dependencies": {
-    "howler": "^2.0.9", 
+    "howler": "^2.0.9",
     "webpack": "^3.5.5"
   },
   "devDependencies": {
