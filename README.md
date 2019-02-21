@@ -4,9 +4,9 @@
 
 > To play piano using CSS and JavaScript
 
-![Travis](https://img.shields.io/travis/LFeh/piano.svg)
-[![license](https://img.shields.io/github/license/LFeh/piano.svg)](./license.md)
-[![GitHub contributors](https://img.shields.io/github/contributors/LFeh/piano.svg)](https://github.com/LFeh/piano/graphs/contributors)
+![Travis](https://img.shields.io/travis/felipefialho/piano.svg)
+[![license](https://img.shields.io/github/license/felipefialho/piano.svg)](./license.md)
+[![GitHub contributors](https://img.shields.io/github/contributors/felipefialho/piano.svg)](https://github.com/felipefialho/piano/graphs/contributors)
 
 This project uses Pug, Stylus and Webpack.
 
@@ -28,7 +28,7 @@ For grid system uses [Autoprefixer](https://github.com/postcss/autoprefixer) to 
 
 ### Code Standards
 
-This project uses my own [Coding Style](https://github.com/LFeh/coding-style) as code reference.
+This project uses my own [Coding Style](https://github.com/felipefialho/coding-style) as code reference.
 
 To help you, this project has a `npm run fix` command to fix all eslint errors.
 
