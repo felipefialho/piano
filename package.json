@@ -62,7 +62,7 @@
     "stylint": "^1.5.9",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-server": "^2.7.1",
     "webpack-pwa-manifest": "^3.6.2"
   }
