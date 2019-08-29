@@ -16,20 +16,12 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack -p",
-    "deploy": "gh-pages-deploy",
     "analyzer": "npm run build && webpack-bundle-analyzer ./dist/stats.json",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylint ./src/",
     "lint:js": "eslint ./src/",
     "fix:js": "eslint ./src/ --fix",
     "precommit": "npm run lint"
-  },
-  "gh-pages-deploy": {
-    "staticpath": "dist",
-    "prep": [
-      "build"
-    ],
-    "noprompt": true
   },
   "dependencies": {
     "howler": "^2.0.9",
@@ -46,7 +38,6 @@
     "cssnano": "^3.10.0",
     "eslint": "^4.19.1",
     "file-loader": "0.11.2",
-    "gh-pages-deploy": "^0.4.2",
     "html-webpack-plugin": "^2.30.1",
     "imagemin-webpack-plugin": "^2.1.1",
     "json-loader": "^0.5.7",

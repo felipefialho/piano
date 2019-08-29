@@ -4,7 +4,7 @@
 
 > To play piano using CSS and JavaScript
 
-![Travis](https://img.shields.io/travis/felipefialho/piano.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1289139d-1809-4ba1-9417-18530eb3caf9/deploy-status)](https://app.netlify.com/sites/felipefialho-piano/deploys)
 [![license](https://img.shields.io/github/license/felipefialho/piano.svg)](./license.md)
 [![GitHub contributors](https://img.shields.io/github/contributors/felipefialho/piano.svg)](https://github.com/felipefialho/piano/graphs/contributors)
 
@@ -38,7 +38,6 @@ To help you, this project has a `npm run fix` command to fix all eslint errors.
 - `npm run build`: run all production tasks create a `dist` folder to deploy
 - `npm run lint`: lint javascript and css
 - `npm run fix`: command to fix all eslint errors
-- `npm run deploy`: run all tasks to build and deploy on gh-pages
 
 ## License
 
