@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "title": "Piano",
   "description": "To play piano using CSS and JavaScript",
-  "homepage": "http://www.felipefialho.com/piano",
+  "homepage": "https://piano.felipefialho.com",
   "browserslist": [
     "> 1%",
     "last 2 versions"
