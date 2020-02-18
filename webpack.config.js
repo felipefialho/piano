@@ -6,7 +6,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const OfflinePlugin = require('offline-plugin'); 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const PROD = process.env.NODE_ENV === 'production';
 const DEV = process.env.NODE_ENV === 'development';
@@ -88,7 +88,9 @@ const baseWebpack = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ['dist']
+    }),
     new HtmlWebpackPlugin({  
       hash: true, 
       template: './src/index.pug'
