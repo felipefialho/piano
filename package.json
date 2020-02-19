@@ -42,7 +42,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "json-loader": "^0.5.7",
     "lost": "^8.2.1",
-    "offline-plugin": "^4.9.0",
+    "offline-plugin": "^5.0.7",
     "postcss-font-magician": "^2.3.1",
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.0-rc.3",
