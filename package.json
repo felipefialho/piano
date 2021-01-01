@@ -36,7 +36,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.28.5",
     "cssnano": "^4.1.10",
-    "eslint": "^7.14.0",
+    "eslint": "^7.16.0",
     "file-loader": "2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "imagemin-webpack-plugin": "^2.4.2",
