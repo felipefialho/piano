@@ -45,7 +45,7 @@
     "offline-plugin": "^5.0.7",
     "postcss-font-magician": "^2.3.1",
     "postcss-loader": "^3.0.0",
-    "pug": "^3.0.1",
+    "pug": "^3.0.2",
     "pug-loader": "^2.3.0",
     "rucksack-css": "^1.0.2",
     "rupture": "^0.7.1",
