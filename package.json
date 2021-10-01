@@ -51,7 +51,7 @@
     "rupture": "^0.7.1",
     "style-loader": "^0.23.1",
     "stylint": "^2.0.0",
-    "stylus": "^0.54.8",
+    "stylus": "^0.55.0",
     "stylus-loader": "^3.0.1",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-dev-server": "^4.1.0",
