@@ -54,7 +54,7 @@
     "stylus": "^0.55.0",
     "stylus-loader": "^3.0.1",
     "webpack-bundle-analyzer": "^4.5.0",
-    "webpack-dev-server": "^4.6.0",
+    "webpack-dev-server": "^4.7.3",
     "webpack-pwa-manifest": "^4.3.0"
   }
 }
