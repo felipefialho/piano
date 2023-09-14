@@ -35,7 +35,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.28.5",
     "cssnano": "^4.1.11",
-    "eslint": "^8.41.0",
+    "eslint": "^8.48.0",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "^3.2.0",
     "imagemin-webpack-plugin": "^2.4.2",
@@ -43,7 +43,7 @@
     "js-yaml": "^4.1.0",
     "lost": "^8.3.1",
     "offline-plugin": "^5.0.7",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.29",
     "postcss-font-magician": "^3.0.0",
     "postcss-loader": "^3.0.0",
     "pug": "^3.0.2",
@@ -56,8 +56,8 @@
     "stylus": "^0.59.0",
     "stylus-loader": "^3.0.1",
     "webpack": "^3.12.0",
-    "webpack-bundle-analyzer": "^4.8.0",
-    "webpack-dev-server": "^4.15.0",
+    "webpack-bundle-analyzer": "^4.9.1",
+    "webpack-dev-server": "^4.15.1",
     "webpack-pwa-manifest": "^4.3.0"
   },
   "overrides": {
