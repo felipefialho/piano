@@ -24,7 +24,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "howler": "^2.2.3"
+    "howler": "^2.2.4"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.8",
