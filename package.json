@@ -24,7 +24,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "howler": "^2.2.3"
+    "howler": "^2.2.4"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.8",
@@ -35,7 +35,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.28.5",
     "cssnano": "^4.1.11",
-    "eslint": "^8.48.0",
+    "eslint": "^8.50.0",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "^3.2.0",
     "imagemin-webpack-plugin": "^2.4.2",
@@ -43,7 +43,7 @@
     "js-yaml": "^4.1.0",
     "lost": "^8.3.1",
     "offline-plugin": "^5.0.7",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.31",
     "postcss-font-magician": "^3.0.0",
     "postcss-loader": "^3.0.0",
     "pug": "^3.0.2",
