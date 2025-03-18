@@ -5,15 +5,13 @@ const rupture = require('rupture');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const OfflinePlugin = require('offline-plugin'); 
+const { GenerateSW } = require('workbox-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const PROD = process.env.NODE_ENV === 'production';
-const DEV = process.env.NODE_ENV === 'development';
 const config = require('./app.config.json');
 
 const webapp = {
-  name: config.title, 
+  name: config.title,
   short_name: config.short_name,
   description: config.description,
   background_color: config.theme_color,
@@ -32,8 +30,9 @@ const copyFiles = [
   { from: './src/images/', to: './images' },
   { from: './src/favicon.ico', to: './' },
 ];
- 
+
 const baseWebpack = {
+  mode: process.env.NODE_ENV || 'development',
   entry: {
     app: './src/app.js'
   },
@@ -50,26 +49,29 @@ const baseWebpack = {
       {
         test: /\.styl/,
         use: [
-          'style-loader', 
-          { 
-            loader: 'css-loader', 
-            options: { importLoaders: 1 } 
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }
           },
           'postcss-loader',
           {
             loader: 'stylus-loader',
             options: {
-              use: [rupture()],
+              stylusOptions: {
+                use: [rupture()],
+              },
             },
           }
         ]
       },
       {
         test: /\.json$/,
+        type: 'javascript/auto',
         loader: 'json-loader'
       },
       {
-        test: /\.jpe?g$|\.gif$|\.png$|\.svg$/,
+        test: /\.(jpe?g|gif|png|svg)$/,
         use: 'file-loader'
       },
       {
@@ -78,12 +80,12 @@ const baseWebpack = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
+            presets: ['@babel/preset-env']
           }
         }
       }
     ]
-  }, 
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
@@ -91,15 +93,15 @@ const baseWebpack = {
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ['dist']
     }),
-    new HtmlWebpackPlugin({  
-      hash: true, 
+    new HtmlWebpackPlugin({
+      hash: true,
       template: './src/index.pug'
-    }), 
-    new CopyWebpackPlugin(copyFiles)
+    }),
+    new CopyWebpackPlugin({ patterns: copyFiles })
   ]
 };
 
-const sw = { 
+const sw = {
   safeToUseOptionalCaches: true,
   caches: {
     main: ['index.html'],
@@ -112,25 +114,39 @@ const sw = {
   AppCache: { events: true }
 };
 
-if (PROD) {
-  baseWebpack.plugins.push(new webpack.optimize.UglifyJsPlugin({})); 
+if (process.env.NODE_ENV === 'production') {
   baseWebpack.plugins.push(new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }));
-  baseWebpack.plugins.push(new BundleAnalyzerPlugin({analyzerMode: 'disabled'})); 
+  baseWebpack.plugins.push(new BundleAnalyzerPlugin({ analyzerMode: 'disabled' }));
   baseWebpack.plugins.push(new WebpackPwaManifest(webapp));
-  baseWebpack.plugins.push(new OfflinePlugin(sw));
-}  
+  baseWebpack.plugins.push(
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: ({ request }) => request.destination === 'document',
+          handler: 'NetworkFirst',
+        },
+        {
+          urlPattern: ({ request }) => request.destination === 'image',
+          handler: 'CacheFirst',
+        },
+      ],
+    })
+  );
+}
 
-if (DEV) {
+if (process.env.NODE_ENV === 'development') {
   baseWebpack.devServer = {
-    contentBase: path.join(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
     compress: true,
     open: true,
-    host: '0.0.0.0', 
-    disableHostCheck: true
-  }; 
-}  
+    host: '0.0.0.0',
+  };
+}
 
 module.exports = (env) => {
   return baseWebpack;
 };
- 
