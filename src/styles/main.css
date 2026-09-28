@@ -1,0 +1,12 @@
+/* --------------------------------------------------
+   Main
+   -------------------------------------------------- */
+
+.main {
+  background: var(--white);
+  min-height: calc(99vh - (var(--piano-height) + var(--footer-height)));
+  padding-bottom: var(--space-md);
+  padding-top: var(--space-md);
+  position: relative;
+  z-index: var(--zindex-site);
+}
