@@ -8,36 +8,28 @@
 [![license](https://img.shields.io/github/license/felipefialho/piano.svg)](./license.md)
 [![GitHub contributors](https://img.shields.io/github/contributors/felipefialho/piano.svg)](https://github.com/felipefialho/piano/graphs/contributors)
 
-This project uses Pug, Stylus and Webpack.
+This project uses Vite, TypeScript, CSS and [Howler.js](https://howlerjs.com/).
 
 ## Getting Started
 
+Requires Node.js 22.12+ and [pnpm](https://pnpm.io/).
+
 ```sh
 # install dependencies
-$ npm i
+$ pnpm install
 
 # Run the project
-$ npm start
+$ pnpm dev
 ```
-
-With the commands above, you have everything to start.
-
-### Post CSS libs
-
-For grid system uses [Autoprefixer](https://github.com/postcss/autoprefixer) to make easy use browser prefixes, [Lost](https://github.com/peterramsing/lost) with some help from, [Rucksack](http://simplaio.github.io/rucksack/) for animations, reset and a lot of great mixins, [Rupture](https://github.com/jenius/rupture) for responsive utilities. And [Font Magician](https://github.com/jonathantneal/postcss-font-magician/) to get the webfonts.
-
-### Code Standards
-
-This project uses my own [Coding Style](https://github.com/felipefialho/coding-style) as code reference.
-
-To help you, this project has a `npm run fix` command to fix all eslint errors.
 
 ### Tasks
 
-- `npm start`: run all tasks and initialize watch for changes and a server
-- `npm run build`: run all production tasks create a `dist` folder to deploy
-- `npm run lint`: lint javascript and css
-- `npm run fix`: command to fix all eslint errors
+- `pnpm dev`: start the dev server with hot reload
+- `pnpm build`: type-check and create a `dist` folder to deploy
+- `pnpm preview`: serve the production build locally
+- `pnpm lint`: lint TypeScript and CSS
+- `pnpm lint:fix`: fix lint errors automatically
+- `pnpm generate-pwa-assets`: regenerate the PWA icons from `public/images/piano.png`
 
 ## License
 
