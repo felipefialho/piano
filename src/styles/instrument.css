@@ -1,0 +1,28 @@
+/* --------------------------------------------------
+   Instrument
+   -------------------------------------------------- */
+
+.instrument {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--lacquer) 88%, white) 0%, var(--lacquer) 40%);
+  border-bottom: 1px solid var(--lacquer-edge);
+  padding: clamp(20px, 4vh, 44px) 16px 0;
+}
+
+.fallboard {
+  padding-bottom: clamp(14px, 3vh, 28px);
+  text-align: center;
+}
+
+.rotate {
+  color: var(--ink-soft);
+  display: none;
+  font-size: 0.85rem;
+  padding: 12px 16px 0;
+  text-align: center;
+}
+
+@media (width <= 640px) and (orientation: portrait) {
+  .rotate {
+    display: block;
+  }
+}

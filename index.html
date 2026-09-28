@@ -11,19 +11,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <title>Piano Keyboard - To play piano using CSS and JavaScript</title>
-    <meta name="description" content="To play piano using CSS and JavaScript">
-    <meta name="theme-color" content="#333333">
+    <meta name="description" content="Two octaves, playable with touch, mouse or keyboard.">
+    <meta name="theme-color" content="#e6e5e1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1b1e" media="(prefers-color-scheme: dark)">
     <meta itemprop="name" content="Piano Keyboard">
-    <meta itemprop="description" content="To play piano using CSS and JavaScript">
+    <meta itemprop="description" content="Two octaves, playable with touch, mouse or keyboard.">
     <meta itemprop="image" content="https://piano.felipefialho.com/images/piano.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Piano Keyboard">
-    <meta name="twitter:description" content="To play piano using CSS and JavaScript">
+    <meta name="twitter:description" content="Two octaves, playable with touch, mouse or keyboard.">
     <meta name="twitter:site" content="@felipefialho_">
     <meta name="twitter:creator" content="@felipefialho_">
     <meta name="twitter:image" content="https://piano.felipefialho.com/images/piano.png">
     <meta property="og:title" content="Piano Keyboard">
-    <meta property="og:description" content="To play piano using CSS and JavaScript">
+    <meta property="og:description" content="Two octaves, playable with touch, mouse or keyboard.">
     <meta property="og:image" content="https://piano.felipefialho.com/images/piano.png">
     <meta property="og:url" content="https://piano.felipefialho.com/">
     <meta property="og:site_name" content="Piano Keyboard">
@@ -37,80 +38,84 @@
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZDLZX82" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <section class="header">
-      <div class="piano">
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="CapsLock" data-note="1C"></div>
-          <div class="piano-key__black" data-code="KeyQ" data-note="1Cs"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyA" data-note="1D"></div>
-          <div class="piano-key__black" data-code="KeyW" data-note="1Ds"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyS" data-note="1E"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyD" data-note="1F"></div>
-          <div class="piano-key__black" data-code="KeyR" data-note="1Fs"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyF" data-note="1G"></div>
-          <div class="piano-key__black" data-code="KeyT" data-note="1Gs"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyG" data-note="2A"></div>
-          <div class="piano-key__black" data-code="KeyY" data-note="2As"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyH" data-note="2B"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyJ" data-note="2C"></div>
-          <div class="piano-key__black" data-code="KeyI" data-note="2Cs"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyK" data-note="2D"></div>
-          <div class="piano-key__black" data-code="KeyO" data-note="2Ds"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="KeyL" data-note="2E"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="Semicolon" data-note="2F"></div>
-          <div class="piano-key__black" data-code="BracketLeft" data-note="2Fs"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="Quote" data-note="2G"></div>
-          <div class="piano-key__black" data-code="BracketRight" data-note="2Gs"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="Backslash" data-note="3A"></div>
-          <div class="piano-key__black" data-code="Enter" data-note="3As"></div>
-        </div>
-        <div class="piano-key">
-          <div class="piano-key__white" data-code="ArrowLeft" data-note="3B"></div>
+    <section class="instrument" aria-label="Piano">
+      <div class="fallboard">
+        <h1 class="decal">Piano Keyboard</h1>
+        <p class="decal-sub">Two octaves, playable with touch, mouse or keyboard.</p>
+      </div>
+      <div class="keybed">
+        <div class="felt"></div>
+        <div class="piano" role="group" aria-label="Piano keys">
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyZ" data-note="1C" data-label="C4" data-hint="Z"></div>
+            <div class="piano-key__black" data-code="KeyS" data-note="1Cs" data-hint="S"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyX" data-note="1D" data-label="D4" data-hint="X"></div>
+            <div class="piano-key__black" data-code="KeyD" data-note="1Ds" data-hint="D"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyC" data-note="1E" data-label="E4" data-hint="C"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyV" data-note="1F" data-label="F4" data-hint="V"></div>
+            <div class="piano-key__black" data-code="KeyG" data-note="1Fs" data-hint="G"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyB" data-note="1G" data-label="G4" data-hint="B"></div>
+            <div class="piano-key__black" data-code="KeyH" data-note="1Gs" data-hint="H"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyN" data-note="2A" data-label="A4" data-hint="N"></div>
+            <div class="piano-key__black" data-code="KeyJ" data-note="2As" data-hint="J"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyM" data-note="2B" data-label="B4" data-hint="M"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyQ" data-note="2C" data-label="C5" data-hint="Q"></div>
+            <div class="piano-key__black" data-code="Digit2" data-note="2Cs" data-hint="2"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyW" data-note="2D" data-label="D5" data-hint="W"></div>
+            <div class="piano-key__black" data-code="Digit3" data-note="2Ds" data-hint="3"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyE" data-note="2E" data-label="E5" data-hint="E"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyR" data-note="2F" data-label="F5" data-hint="R"></div>
+            <div class="piano-key__black" data-code="Digit5" data-note="2Fs" data-hint="5"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyT" data-note="2G" data-label="G5" data-hint="T"></div>
+            <div class="piano-key__black" data-code="Digit6" data-note="2Gs" data-hint="6"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyY" data-note="3A" data-label="A5" data-hint="Y"></div>
+            <div class="piano-key__black" data-code="Digit7" data-note="3As" data-hint="7"></div>
+          </div>
+          <div class="piano-key">
+            <div class="piano-key__white" data-code="KeyU" data-note="3B" data-label="B5" data-hint="U"></div>
+          </div>
         </div>
       </div>
+      <p class="rotate">Turn your phone sideways to play both octaves.</p>
     </section>
-    <main class="main">
-      <div class="container">
-        <div class="content">
-          <h1 class="title">Piano Keyboard</h1>
-          <h2 class="subtitle">To play piano using CSS and JavaScript 😎</h2>
-          <a class="github" href="https://github.com/felipefialho/piano">
-            <img src="https://img.shields.io/github/stars/felipefialho/piano.svg?style=for-the-badge&label=Github" alt="Stars">
-          </a>
-          <p class="description">The better way to play the piano is using a touch device. You can also use your keyboard or mouse to play.</p>
-          <p class="description">Using the keyboard, the first key is "caps lock" and the sequence of keys is the same of the piano.</p>
-        </div>
+    <main class="info">
+      <div>
+        <h2>How to play</h2>
+        <p>
+          Tap or click a key, or use your keyboard: <kbd>Z</kbd> through <kbd>M</kbd> plus
+          <kbd>S</kbd>, <kbd>D</kbd>, <kbd>G</kbd>, <kbd>H</kbd>, <kbd>J</kbd> play the lower octave,
+          and <kbd>Q</kbd> through <kbd>U</kbd> plus <kbd>2</kbd>, <kbd>3</kbd>, <kbd>5</kbd>,
+          <kbd>6</kbd>, <kbd>7</kbd> play the upper octave, matching the hints shown on each key.
+        </p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/felipefialho/piano" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
       </div>
     </main>
-    <footer class="footer">
-      <p class="footer__description">
-        Made with ❤ by
-        <a class="footer__link" href="https://twitter.com/felipefialho_" target="_blank" rel="noopener noreferrer">Felipe Fialho</a>
-      </p>
-    </footer>
+    <footer>Made by <a href="https://felipefialho.com" target="_blank" rel="noopener noreferrer">Felipe Fialho</a></footer>
   </body>
 </html>

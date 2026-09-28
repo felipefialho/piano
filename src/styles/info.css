@@ -1,0 +1,34 @@
+/* --------------------------------------------------
+   Info
+   -------------------------------------------------- */
+
+.info {
+  align-items: start;
+  display: grid;
+  gap: 24px 48px;
+  grid-template-columns: 1fr auto;
+  padding: 36px 16px 28px;
+}
+
+.info p {
+  max-width: 58ch;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  gap: 6px;
+  text-align: right;
+}
+
+@media (width <= 640px) and (orientation: portrait) {
+  .info {
+    grid-template-columns: 1fr;
+    padding-top: 28px;
+  }
+
+  .links {
+    text-align: left;
+  }
+}

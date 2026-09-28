@@ -1,32 +1,33 @@
 /* --------------------------------------------------
    Variables
-   Breakpoints stay literal in media queries:
-   xxs 380px, xs 440px, sm 768px
    -------------------------------------------------- */
 
 :root {
-  /* Colors */
-  --gray-darker: #282828;
-  --gray-dark: #333;
-  --gray: #666;
-  --white: #fff;
-  --blue: #0291a7;
-  --blue-light: #aceff9;
+  --lacquer: #e6e5e1;
+  --lacquer-edge: #cfcdc7;
+  --ink: #26262a;
+  --ink-soft: #5c5b60;
+  --felt: #9e1f2c;
+  --brass: #9a7a3c;
+  --ivory: #fbfaf6;
+  --ivory-shade: #deddd6;
+  --ebony: #1d1d20;
+  --focus: #9e1f2c;
+  --max-width: 1180px;
 
-  /* Spaces */
-  --space-xxs: 0.4rem;
-  --space-xs: 0.8rem;
-  --space-sm: 1.6rem;
-  --space: 2.4rem;
-  --space-md: 3.2rem;
-  --space-xxlg: 8.8rem;
+  color-scheme: light;
+}
 
-  /* Layout */
-  --screen-sm: 768px;
-  --piano-height: 60vh;
-  --footer-height: 4rem;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lacquer: #1b1b1e;
+    --lacquer-edge: #2c2c30;
+    --ink: #ecebe6;
+    --ink-soft: #a6a5a0;
+    --brass: #c9a862;
+    --felt: #b3303d;
+    --focus: #e0a4aa;
 
-  /* zIndex */
-  --zindex-piano: 1;
-  --zindex-site: 10;
+    color-scheme: dark;
+  }
 }

@@ -2,23 +2,8 @@
    Footer
    -------------------------------------------------- */
 
-.footer {
-  align-items: center;
-  background: var(--gray-darker);
-  color: var(--white);
-  display: flex;
-  font-size: 1.6rem;
-  height: var(--footer-height);
-  justify-content: center;
-}
-
-.footer__link {
-  color: var(--blue-light);
-  font-weight: bold;
-  text-decoration: none;
-
-  &:focus,
-  &:hover {
-    text-decoration: underline;
-  }
+footer {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  padding: 0 16px 32px;
 }

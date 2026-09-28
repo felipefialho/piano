@@ -2,28 +2,36 @@
    Typography
    -------------------------------------------------- */
 
-.title {
-  font-size: 6rem;
-
-  &:not(:last-child) {
-    margin-bottom: calc(var(--space-xxs) / 2);
-  }
+.decal {
+  color: var(--brass);
+  font: 500 clamp(1.9rem, 1.2rem + 2.6vw, 3.4rem)/1 'Bodoni Moda Variable', 'Bodoni Moda', serif;
+  font-optical-sizing: auto;
+  letter-spacing: 0.01em;
 }
 
-.subtitle {
-  color: var(--gray);
-  font-size: 3rem;
-  font-weight: normal;
-
-  &:not(:last-child) {
-    margin-bottom: var(--space-sm);
-  }
+.decal-sub {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
 }
 
-.description {
-  font-size: 2rem;
+.info h2 {
+  font: 500 1.35rem/1.2 'Bodoni Moda Variable', 'Bodoni Moda', serif;
+  margin-bottom: 0.5rem;
+}
 
-  &:not(:last-child) {
-    margin-bottom: var(--space-sm);
+kbd {
+  background: color-mix(in srgb, var(--lacquer) 60%, white);
+  border: 1px solid var(--lacquer-edge);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font: 600 0.8em/1 'Instrument Sans Variable', 'Instrument Sans', sans-serif;
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  kbd {
+    background: #26262a;
   }
 }
