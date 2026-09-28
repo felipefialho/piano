@@ -1,0 +1,29 @@
+/* --------------------------------------------------
+   Typography
+   -------------------------------------------------- */
+
+.title {
+  font-size: 6rem;
+
+  &:not(:last-child) {
+    margin-bottom: calc(var(--space-xxs) / 2);
+  }
+}
+
+.subtitle {
+  color: var(--gray);
+  font-size: 3rem;
+  font-weight: normal;
+
+  &:not(:last-child) {
+    margin-bottom: var(--space-sm);
+  }
+}
+
+.description {
+  font-size: 2rem;
+
+  &:not(:last-child) {
+    margin-bottom: var(--space-sm);
+  }
+}

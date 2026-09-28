@@ -1,0 +1,45 @@
+/* --------------------------------------------------
+   Base
+   -------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scales 8px to 10px between 420px and 1280px viewports */
+html {
+  font-size: clamp(8px, calc(8px + 2 * (100vw - 420px) / 860), 10px);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color: var(--gray-dark);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.github {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-bottom: var(--space);
+  }
+}

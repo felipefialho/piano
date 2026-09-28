@@ -1,0 +1,32 @@
+/* --------------------------------------------------
+   Variables
+   Breakpoints stay literal in media queries:
+   xxs 380px, xs 440px, sm 768px
+   -------------------------------------------------- */
+
+:root {
+  /* Colors */
+  --gray-darker: #282828;
+  --gray-dark: #333;
+  --gray: #666;
+  --white: #fff;
+  --blue: #0291a7;
+  --blue-light: #aceff9;
+
+  /* Spaces */
+  --space-xxs: 0.4rem;
+  --space-xs: 0.8rem;
+  --space-sm: 1.6rem;
+  --space: 2.4rem;
+  --space-md: 3.2rem;
+  --space-xxlg: 8.8rem;
+
+  /* Layout */
+  --screen-sm: 768px;
+  --piano-height: 60vh;
+  --footer-height: 4rem;
+
+  /* zIndex */
+  --zindex-piano: 1;
+  --zindex-site: 10;
+}
