@@ -1,69 +1,32 @@
 {
   "name": "piano",
-  "version": "2.2.0",
-  "title": "Piano",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
   "description": "To play piano using CSS and JavaScript",
   "homepage": "https://piano.felipefialho.com",
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
   "author": {
     "name": "Felipe Fialho",
     "email": "hi@felipefialho.com",
-    "url": "http://www.felipefialho.com"
+    "url": "https://www.felipefialho.com"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development webpack serve",
-    "build": "NODE_ENV=production webpack",
-    "analyzer": "npm run build && webpack-bundle-analyzer ./dist/stats.json",
-    "lint": "npm run lint:js && npm run lint:css",
-    "lint:css": "stylint ./src/",
-    "lint:js": "eslint ./src/",
-    "fix:js": "eslint ./src/ --fix",
-    "precommit": "npm run lint"
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "howler": "^2.2.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/preset-env": "^7.21.0",
-    "autoprefixer": "^10.4.13",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-loader": "^9.1.2",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.8.1",
-    "cssnano": "^5.1.15",
-    "eslint": "^8.50.0",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "imagemin-webpack-plugin": "^2.4.2",
-    "js-yaml": "^4.1.0",
-    "json-loader": "^0.5.7",
-    "lost": "^8.3.1",
-    "postcss": "^8.4.31",
-    "postcss-font-magician": "^3.0.0",
-    "postcss-loader": "^7.3.3",
-    "pug": "^3.0.2",
-    "pug-loader": "^2.4.0",
-    "rucksack-css": "^1.0.2",
-    "rupture": "^0.7.1",
-    "set-value": "^4.1.0",
-    "style-loader": "^3.3.3",
-    "stylint": "^2.0.0",
-    "stylus": "^0.59.0",
-    "stylus-loader": "^7.1.0",
-    "webpack": "^5.88.2",
-    "webpack-bundle-analyzer": "^4.9.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^4.15.2",
-    "webpack-pwa-manifest": "^4.3.0",
-    "workbox-webpack-plugin": "^7.3.0"
-  },
-  "overrides": {
-    "tar": "^4.4.18",
-    "ini": "^1.3.6"
+    "@types/howler": "^2.2.13",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.1"
   }
 }
