@@ -1,7 +1,7 @@
-@import './variables.css';
-@import './base.css';
-@import './typography.css';
-@import './container.css';
-@import './main.css';
-@import './footer.css';
-@import './piano.css';
+@import url('./variables.css');
+@import url('./base.css');
+@import url('./typography.css');
+@import url('./container.css');
+@import url('./main.css');
+@import url('./footer.css');
+@import url('./piano.css');
