@@ -7,3 +7,7 @@ footer {
   font-size: 0.85rem;
   padding: 0 16px 32px;
 }
+
+footer p + p {
+  margin-top: 0.25rem;
+}
