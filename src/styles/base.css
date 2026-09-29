@@ -10,16 +10,13 @@
   padding: 0;
 }
 
-/* Scales 8px to 10px between 420px and 1280px viewports */
-html {
-  font-size: clamp(8px, calc(8px + 2 * (100vw - 420px) / 860), 10px);
-}
-
 body {
+  background: var(--lacquer);
+  color: var(--ink);
+  font-family: 'Instrument Sans Variable', 'Instrument Sans', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  color: var(--gray-dark);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  overflow-x: hidden;
 }
 
 img {
@@ -27,19 +24,27 @@ img {
 }
 
 a {
-  color: var(--blue);
-  text-decoration: none;
+  color: inherit;
+  text-decoration-color: var(--felt);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 
-  &:focus,
   &:hover {
-    text-decoration: underline;
+    text-decoration-thickness: 2px;
   }
 }
 
-.github {
-  display: inline-block;
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
 
-  &:not(:last-child) {
-    margin-bottom: var(--space);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

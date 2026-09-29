@@ -2,6 +2,7 @@
 @import url('./base.css');
 @import url('./typography.css');
 @import url('./container.css');
-@import url('./main.css');
-@import url('./footer.css');
+@import url('./instrument.css');
 @import url('./piano.css');
+@import url('./info.css');
+@import url('./footer.css');

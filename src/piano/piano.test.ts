@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const play = vi.fn();
 
@@ -12,57 +12,99 @@ vi.mock('howler', () => ({
 
 const { piano } = await import('./piano');
 
-const pressKey = (code: string, repeat = false) =>
-  window.dispatchEvent(new KeyboardEvent('keydown', { code, repeat }));
+const pressKey = (code: string, init: KeyboardEventInit = {}) =>
+  window.dispatchEvent(new KeyboardEvent('keydown', { code, ...init }));
+
+const releaseKey = (code: string) => window.dispatchEvent(new KeyboardEvent('keyup', { code }));
 
 describe('piano', () => {
   beforeAll(() => {
     document.body.innerHTML = `
-      <div class="piano-key__white" data-code="CapsLock" data-note="1C"></div>
-      <div class="piano-key__black" data-code="KeyQ" data-note="1Cs"></div>
+      <div class="piano-key__white" data-code="KeyZ" data-note="1C" data-label="C4"></div>
+      <div class="piano-key__black" data-code="KeyS" data-note="1Cs"></div>
     `;
     piano();
   });
 
   beforeEach(() => {
-    vi.useFakeTimers();
     play.mockClear();
+    document.querySelectorAll('.active').forEach((el) => el.classList.remove('active'));
   });
 
-  afterEach(() => {
-    vi.useRealTimers();
-  });
+  it('plays the mapped note and adds .active on keydown', () => {
+    const key = document.querySelector('[data-code="KeyZ"]');
 
-  it('plays the mapped note and flashes the key on keydown', () => {
-    const key = document.querySelector('[data-code="CapsLock"]');
-
-    pressKey('CapsLock');
+    pressKey('KeyZ');
 
     expect(play).toHaveBeenCalledExactlyOnceWith('medias/261-C.mp3');
     expect(key?.classList.contains('active')).toBe(true);
+  });
 
-    vi.advanceTimersByTime(100);
+  it('removes .active on keyup', () => {
+    const key = document.querySelector('[data-code="KeyZ"]');
+
+    pressKey('KeyZ');
+    releaseKey('KeyZ');
+
+    expect(key?.classList.contains('active')).toBe(false);
+  });
+
+  it('removes .active on window blur', () => {
+    const key = document.querySelector('[data-code="KeyZ"]');
+
+    pressKey('KeyZ');
+    window.dispatchEvent(new Event('blur'));
 
     expect(key?.classList.contains('active')).toBe(false);
   });
 
   it('ignores key repeat', () => {
-    pressKey('KeyQ');
-    pressKey('KeyQ', true);
-    pressKey('KeyQ', true);
+    pressKey('KeyS');
+    pressKey('KeyS', { repeat: true });
+    pressKey('KeyS', { repeat: true });
 
     expect(play).toHaveBeenCalledExactlyOnceWith('medias/277-C-sharp.mp3');
   });
 
-  it('ignores unmapped keys', () => {
-    pressKey('KeyZ');
+  it('ignores key events when a modifier is held', () => {
+    pressKey('KeyZ', { ctrlKey: true });
+    pressKey('KeyZ', { metaKey: true });
+    pressKey('KeyZ', { altKey: true });
 
     expect(play).not.toHaveBeenCalled();
   });
 
-  it('plays the note on pointerdown', () => {
-    document.querySelector('[data-note="1Cs"]')?.dispatchEvent(new Event('pointerdown'));
+  it('ignores key events when focus is in an input', () => {
+    const input = document.createElement('input');
+    document.body.appendChild(input);
+
+    input.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyZ', bubbles: true }));
+
+    expect(play).not.toHaveBeenCalled();
+    input.remove();
+  });
+
+  it('ignores unmapped keys', () => {
+    pressKey('KeyP');
+
+    expect(play).not.toHaveBeenCalled();
+  });
+
+  it('plays the note and adds .active on pointerdown', () => {
+    const key = document.querySelector('[data-code="KeyS"]');
+
+    key?.dispatchEvent(new Event('pointerdown'));
 
     expect(play).toHaveBeenCalledExactlyOnceWith('medias/277-C-sharp.mp3');
+    expect(key?.classList.contains('active')).toBe(true);
+  });
+
+  it('removes .active on pointerup', () => {
+    const key = document.querySelector('[data-code="KeyS"]');
+
+    key?.dispatchEvent(new Event('pointerdown'));
+    key?.dispatchEvent(new Event('pointerup'));
+
+    expect(key?.classList.contains('active')).toBe(false);
   });
 });
